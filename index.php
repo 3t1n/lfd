@@ -27,7 +27,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav">   
-        <a class="nav-item nav-link active">Olá visitante</a>       
+        <a class="nav-item nav-link active" href="baixar.php?arquivo=autorizado.pdf" target="_blank" rel="noopener noreferrer">Baixar PDF</a>       
         </div>
         <div class="form-inline ml-auto" >
         <div class="navbar-nav">       
@@ -38,14 +38,14 @@
 <?php 
 include 'config.php';
 $PDO = db_connect();
-$sql = "SELECT  *  FROM nome";
+$sql = "SELECT  *  FROM escrita";
 $stmt = $PDO->prepare($sql);
 $stmt->execute();
 $nomes = $stmt->fetchAll(PDO::FETCH_ASSOC);
-$nome = $nomes[0]["nome"];
+$nome = $nomes[0]["texto"];
 
 for($i=0;$i < 100; $i++){
-   print("<h1>".$nomes[0]["nome"]."</h1>");
+   print("<h1>".$nomes[0]["texto"]."</h1>");
 }
 ?>
 <body>
