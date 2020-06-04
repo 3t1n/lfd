@@ -1,6 +1,6 @@
 <?php      
        
-//Script utilizado para baixar arquivos do meu site, como planilhas e pdf.
+//Script utilizado para baixar arquivos do meu site
 
 function baixar_arquivo($arquivo){
     $tamanho = filesize("$arquivo");
